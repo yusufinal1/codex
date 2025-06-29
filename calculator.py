@@ -55,6 +55,12 @@ def main(args):
         b = float(args[2])
         try:
             result = calculate(a, op, b)
+        except ZeroDivisionError:
+            print("Error: Division by zero")
+            return 1
+        except ValueError as e:
+            print(e)
+            return 1
         except Exception as e:
             print(f"Error: {e}")
             return 1
